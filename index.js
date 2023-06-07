@@ -191,12 +191,27 @@
 
 // console.log()s "little number" if the number is entered is less than 100.
 // console.log()s "big number" if the number is greater than or equal to 100.
+// let number = 715; 
+
+// if (number < 100) {
+//   console.log("little number");
+// } else {
+//   console.log("big number");
+// }
 // G. Monkey in the Middle
 // Write an if ... else statement:
 
 // console.log() little number if the number entered is less than 5.
 // If the number entered is more than 10, log "big number".
 // Otherwise, log "monkey".
+// let number = 4; 
+// if (number < 5) {
+//   console.log("little number");
+// } else if (number > 10) {
+//   console.log("big number");
+// } else {
+//   console.log("monkey");
+// }
 // H. What's in Your Closet?
 // Below, we've given you examples of Kristyn and Thom's closets modeled as data in JavaScript.
 
@@ -231,175 +246,268 @@
 //   ]
 // ];
 // What's Kristyn wearing today? Using bracket notation to access items in kristynsCloset, log the sentence "Kristyn is rocking that " + *the third item in Kristyn's closet* + " today!" to the console.
+// console.log("Kristyn is rocking that " + kristynsCloset[2] + " today!");
 // Kristyn just bought some sweet shades! Add "raybans" to her closet after "yellow knit hat".
+// kristynsCloset.splice(6, 0, "raybans");
 // Kristyn spilled coffee on her hat... modify this item to read "stained knit hat" instead of yellow.
+// kristynsCloset[5] = "stained knit hat";
 // Put together an outfit for Thom! Using bracket notation, access the first element in Thom's shirts array.
+// const thomShirt = thomsCloset[0][0];
 // In the same way, access one item from Thom's pants array.
+// const thomPants = thomsCloset[1][1];
 // Access one item from Thom's accessories array.
+// const thomAccessory = thomsCloset[2][2];
 // Log a sentence about what Thom's wearing. Example: "Thom is looking fierce in a grey button-up, jeans and wool scarf!"
+// console.log(`Thom is looking fierce in a ${thomShirt}, ${thomPants}, and ${thomAccessory}!`);
 // Get more specific about what kind of PJs Thom is wearing this winter. Modify the name of his PJ pants to Footie Pajamas.
-
+// thomsCloset[1][2] = "Footie Pajamas";
 // IV. Functions
 // Remember, don't repeat yourself! Functions provide a wonderful way to break programs into smaller, manageable, more efficient, reusable parts.
 
 // Alongside each of the function descriptions below, we've included an example of how to test them, and their expected output from that test.
-//// // // // A. printGreeting
-// // // // Write a function called printGreeting with a parameter name that returns a greeting with the argument interpolated into the greeting, like so:
+// A. printGreeting
+// Write a function called printGreeting with a parameter name that returns a greeting with the argument interpolated into the greeting, like so:
 
-// // // console.log(printGreeting("Slimer"));
-// // // => Hello there, Slimer!
-// // function printGreeting(name) {
-// // return console.log(`Hello there, ${name}`);
-// // }
-// // B. printCool
-// // Write a function printCool that accepts one parameter, name as an argument. The function should print the name and a message saying that that person is cool.
+// // console.log(printGreeting("Slimer"));
+// // => Hello there, Slimer!
+// function printGreeting(name) {
+// return console.log(`Hello there, ${name}`);
+// }
+// B. printCool
+// Write a function printCool that accepts one parameter, name as an argument. The function should print the name and a message saying that that person is cool.
+// function printCool(name) {
+//     return (name + " is cool.");
+//   }
+// console.log(printCool("Captain Reynolds"));
+// => "Captain Reynolds is cool"
+//function calculateCube(number) {
+//     var volume = Math.pow(number, 3);
+//     return ("The volume of a cube with side length " + number + " is " + volume + ".");
+//   }
+// C. calculateCube
+// Write a function calculateCube that takes a single number and prints the volume of a cube made from that number.
+// console.log(calculateCube(5));
+// => 125
+// D. isVowel
+// Write a function isVowel that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise. The vowel could be upper or lower case.
+// function isVowel(character) {
+//     var lowercaseCharacter = character.toLowerCase();
+//     return lowercaseCharacter === 'a' || lowercaseCharacter === 'e' || lowercaseCharacter === 'i' || lowercaseCharacter === 'o' || lowercaseCharacter === 'u';
+//   }
+// Test your function on every vowel and make sure it's working. In general, when you write functions, take a minute to test them with different values to make sure they behave the way you expect.
+// console.log(isVowel("a"));
+// => true
+// E. getTwoLengths
+// Write a function getTwoLengths that accepts two parameters (strings). The function should return an array of numbers where each number is the length of the corresponding string.
+// function getTwoLengths(string1, string2) {
+//   var length1 = string1.length;
+//   var length2 = string2.length;
+//   return [length1, length2];
+// }
+// console.log(getTwoLengths("Hank", "Hippopopalous"));
+// => [4, 13]
+// F. getMultipleLengths
+// Write a function getMultipleLengths that accepts a single parameter as an argument: an array of strings. The function should return an array of numbers where each number is the length of the corresponding string.
+// function getMultipleLengths(array) {
+//     var lengths = [];
+//     for (var i = 0; i < array.length; i++) {
+//       lengths.push(array[i].length);
+//     }
+//     return lengths;
+//   }
+// console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
+// => [5, 4, 2, 2, 4]
+// G. maxOfThree
+// Define a function maxOfThree that takes three numbers as arguments and returns the largest of them. If all numbers are the same, it doesn't matter which one is returned. If the two largest numbers are the same, one of them should be returned. Be sure to test it with larger values in each of the three locations.
+// function maxOfThree(num1, num2, num3) {
+//     return Math.max(num1, num2, num3);
+// }
+// console.log(maxOfThree(6, 9, 1));
+// => 9
+// When you've finished this, click here!
+// function maxOfThree(num1, num2, num3) {
+//     let max = num1;
+  
+//     if (num2 > max) {
+//       max = num2;
+//     }
+  
+//     if (num3 > max) {
+//       max = num3;
+//     }
+  
+//     return max;
+//   } the way to solve without using math.max()
+// H. printLongestWord
+// Write a function printLongestWord that accepts a single argument, an array of strings. The method should return the longest word in the array. In case of a tie, the method should return the word that appears first in the array.
+// function printLongestWord(words) {
+//     let longestWord = '';
+  
+//     for (let i = 0; i < words.length; i++) {
+//       if (words[i].length > longestWord.length) {
+//         longestWord = words[i];
+//       }
+//     }
+  
+//     return longestWord;
+//   }
+// console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
+// => "Peanutbutter"
+// Objects
+// Let's set up an object data structure. Say we have a website that sells products, and we have a user of our website, and we want to store that user's data. The object data structure is a good way to organize the data from our user.
 
-// // console.log(printCool("Captain Reynolds"));
-// // => "Captain Reynolds is cool"
+// A. Make a User Object
+// Create an object called user.
+// Write into the object the key-value pairs for name, email, age, and purchased. Set the value of purchased to an empty array []. Set the other values to whatever you would like.
+// B. Update the User
+// Our user has changed his or her email address. Without changing the original user object, update the email value to a new email address.
+// // const user = {
+//   name: 'John Smith',
+//   age: 30,
+//   email: 'john.smith@example.com',
+// };
+// Our user has had a birthday! Without changing the original user object, increment the age value using the postfix operator. Hint: age++.
+// const updatedUser = { ...user, age: user.age++ };
+// C. Adding Keys and Values
+// You have decided to add your user's location to the data that you want to collect.
+// Without changing the original user object, add a new key location to the object, and give it a value of some location (a string).
+// const updatedUser = { ...user, location: 'New York' };
+// D. Shopaholic!
+// Our user has purchased some items! They have purchased some "carbohydrates". Using .push(), add the string "carbohydrates" to the purchased array.
+// They have purchased some "peace of mind". Using .push(), add the string "peace of mind" to the purchased array.
+// They have purchased some "Merino jodhpurs". Using .push(), add the string "Merino jodhpurs" to the purchased array.
+// Console.log just the "Merino jodhpurs" from the purchased array.
+// const purchased = [];
+// purchased.push("carbohydrates");
+// purchased.push("peace of mind");
+// purchased.push("Merino jodhpurs");
+// console.log(purchased[2]);
+// E. Object within an Object
+// Remember that you can add an object to an existing object in the same way that you can add any new key-value pair.
 
-// // C. calculateCube
-// // Write a function calculateCube that takes a single number and prints the volume of a cube made from that number.
+// If we want to give our user a friend with a name and age, we could write:
 
-// // console.log(calculateCube(5));
-// // => 125
+// user.friend = {
+//     name: "Grace Hopper",
+//     age: 85
+// }
+// When we console.log user, we would see the friend object added to our user object.
 
-// // D. isVowel
-// // Write a function isVowel that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise. The vowel could be upper or lower case.
+// Write a friend object into your user object and give the friend a name, age, location, and purchased array (empty for now).
+// Console.log just the friend's name.
+// Console.log just the friend's location.
+// Change the friend's age to 55.
+// The friend has purchased "The One Ring". Use .push() to add "The One Ring" to the friend's purchased array.
+// The friend has purchased "A latte". Use .push() to add "A latte" to the friend's purchased array.
+// Console.log just "A latte" from the friend's purchased array.
+// const user = {
+//     name: "John Smith",
+//     age: 30
+//   };
+//   user.friend = {
+//     name: "Grace Hopper",
+//     age: 85,
+//     location: "New York",
+//     purchased: []
+//   };
+//   console.log(user.friend.name); 
+//   console.log(user.friend.location);
+//   user.friend.age = 55;
+//   user.friend.purchased.push("The One Ring");
+//   user.friend.purchased.push("A latte");
+//   console.log(user.friend.purchased[1]);
+// F. Loops
+// Write a for loop that iterates over the User's purchased array (NOT the friend's purchased array), and prints each element to the console.
+// for (let i = 0; i < user.purchased.length; i++) {
+//     console.log(user.purchased[i]);
+//   }
+// Write a for loop that iterates over the Friend's purchased array, and prints each element to the console.
+// for (let i = 0; i < user.friend.purchased.length; i++) {
+//  console.log(user.friend.purchased[i]);
+//  }
+// G. Functions Operating on Objects
+// Write a single function updateUser that takes no parameters. When the function is run, it should:
 
-// // Test your function on every vowel and make sure it's working. In general, when you write functions, take a minute to test them with different values to make sure they behave the way you expect.
+// Increment the user's age by 1.
+// Make the user's name uppercase.
+// The function does not need a return statement, it will merely modify the user object.
+// function updateUser() {
+//     user.age++;
+//     user.name = user.name.toUpperCase();
+//   }
+// Write a function oldAndLoud that performs the exact same tasks as updateUser, but instead of hard-coding it to only work on our user object, make it take a parameter person, and have it modify the object that is passed in as an argument when the function is called. Call your oldAndLoud function with user as the argument.
+// function oldAndLoud(person) {
+//   person.age++;
+//   person.name = person.name.toUpperCase();
+// }
+// updateUser();
+// oldAndLoud(user);
+// Requirements Complete!
+// The remainder of this lab is provided as additional practice if you have the time. If you have run out of time, the following is optional.
 
-// // console.log(isVowel("a"));
-// // => true
+// H. Mama cat
+// Define an object called cat1 that contains the following properties:
 
-// // E. getTwoLengths
-// // Write a function getTwoLengths that accepts two parameters (strings). The function should return an array of numbers where each number is the length of the corresponding string.
+// name
+// breed
+// age (a number)
+// console.log the cat's age and breed.
+// const cat1 = {
+//     name: "Fluffy",
+//     breed: "Sphinx",
+//     age: 3
+//   };
+  
+//   console.log(`Cat's age: ${cat1.age}`);
+//   console.log(`Cat's breed: ${cat1.breed}`);
+// I. Papa cat
+// Define an object called cat2 that contains the same properties.
+// const cat2 = {
+//     name: "Fluffy",
+//     breed: "Siamese",
+//     age: 6
+//   };
+// J. Combine Cats!
+// The cats are multiplying!
 
-// // console.log(getTwoLengths("Hank", "Hippopopalous"));
-// // => [4, 13]
+// Write a function combineCats that has two parameters: mama, and papa. The function will take two arguments -- each a cat object.
+// Pass cat1 and cat2 as arguments to the combineCats function. The function should console.log them.
+// Example:
 
-// // F. getMultipleLengths
-// // Write a function getMultipleLengths that accepts a single parameter as an argument: an array of strings. The function should return an array of numbers where each number is the length of the corresponding string.
+// combineCats(cat1, cat2)
+// { name: "Joe", age: 19, breed: "Mog" } { name: "Jam", age: 45, breed: "Siamese" }
 
-// // console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
-// // => [5, 4, 2, 2, 4]
+// This is to demonstrate that functions can take objects as arguments
 
-// // G. maxOfThree
-// // Define a function maxOfThree that takes three numbers as arguments and returns the largest of them. If all numbers are the same, it doesn't matter which one is returned. If the two largest numbers are the same, one of them should be returned. Be sure to test it with larger values in each of the three locations.
+// You could also invoke the combineCats function by writing the objects straight into the parentheses:
 
-// // console.log(maxOfThree(6, 9, 1));
-// // => 9
+// combineCats({ name: "Craig", age: 20, breed: "unknown" }, { name: "Linda", age: 20, breed: "undefined" });
+// Make it so the combineCats function will return a combination of the two incoming cats. The result should be an object wherein the:
 
-// // When you've finished this, click here!
-// // H. printLongestWord
-// // Write a function printLongestWord that accepts a single argument, an array of strings. The method should return the longest word in the array. In case of a tie, the method should return the word that appears first in the array.
+// name is a concatenation of the parents' names.
+// age is 1.
+// breed is each of the parents' breeds with a hyphen in between.
+// Example:
 
-// // console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
-// // => "Peanutbutter"
+// console.log(combineCats(cat1, cat2));
+// { name: 'JoeJam', age: 1, breed: 'Mog-Siamese' }
 
+// This is to demonstrate that a function can return an object
 
-// // Objects
-// // Let's set up an object data structure. Say we have a website that sells products, and we have a user of our website, and we want to store that user's data. The object data structure is a good way to organize the data from our user.
+// K. Cat Brain-Bender
+// If combineCats returns an object, and if combineCats takes objects as arguments, then it stands to reason that:
 
-// // A. Make a User Object
-// // Create an object called user.
-// // Write into the object the key-value pairs for name, email, age, and purchased. Set the value of purchased to an empty array []. Set the other values to whatever you would like.
-// // B. Update the User
-// // Our user has changed his or her email address. Without changing the original user object, update the email value to a new email address.
-// // Our user has had a birthday! Without changing the original user object, increment the age value using the postfix operator. Hint: age++.
-// // C. Adding Keys and Values
-// // You have decided to add your user's location to the data that you want to collect.
+// combineCats can use itself as its own argument.
 
-// // Without changing the original user object, add a new key location to the object, and give it a value of some location (a string).
-// // D. Shopaholic!
-// // Our user has purchased some items! They have purchased some "carbohydrates". Using .push(), add the string "carbohydrates" to the purchased array.
-// // They have purchased some "peace of mind". Using .push(), add the string "peace of mind" to the purchased array.
-// // They have purchased some "Merino jodhpurs". Using .push(), add the string "Merino jodhpurs" to the purchased array.
-// // Console.log just the "Merino jodhpurs" from the purchased array.
-// // E. Object within an Object
-// // Remember that you can add an object to an existing object in the same way that you can add any new key-value pair.
+// Take a second to stew on that.
 
-// // If we want to give our user a friend with a name and age, we could write:
+// What is the result of the following?
 
-// // user.friend = {
-// //     name: "Grace Hopper",
-// //     age: 85
-// // }
-// // When we console.log user, we would see the friend object added to our user object.
+// console.log(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)));
+// The above console.log is two levels deep of combineCats.
 
-// // Write a friend object into your user object and give the friend a name, age, location, and purchased array (empty for now).
-// // Console.log just the friend's name.
-// // Console.log just the friend's location.
-// // Change the friend's age to 55.
-// // The friend has purchased "The One Ring". Use .push() to add "The One Ring" to the friend's purchased array.
-// // The friend has purchased "A latte". Use .push() to add "A latte" to the friend's purchased array.
-// // Console.log just "A latte" from the friend's purchased array.
-// // F. Loops
-// // Write a for loop that iterates over the User's purchased array (NOT the friend's purchased array), and prints each element to the console.
-// // Write a for loop that iterates over the Friend's purchased array, and prints each element to the console.
-// // G. Functions Operating on Objects
-// // Write a single function updateUser that takes no parameters. When the function is run, it should:
+// Write a console.log that is three levels deep of combineCats. combineCats should have two arguments, each which are combineCats, each which have two arguments, each which are combineCats.
+// Your output should look something like:
 
-// // Increment the user's age by 1.
-// // Make the user's name uppercase.
-// // The function does not need a return statement, it will merely modify the user object.
-
-// // Write a function oldAndLoud that performs the exact same tasks as updateUser, but instead of hard-coding it to only work on our user object, make it take a parameter person, and have it modify the object that is passed in as an argument when the function is called. Call your oldAndLoud function with user as the argument.
-
-// // Requirements Complete!
-// // The remainder of this lab is provided as additional practice if you have the time. If you have run out of time, the following is optional.
-
-// // H. Mama cat
-// // Define an object called cat1 that contains the following properties:
-
-// // name
-// // breed
-// // age (a number)
-// // console.log the cat's age and breed.
-
-// // I. Papa cat
-// // Define an object called cat2 that contains the same properties.
-
-// // J. Combine Cats!
-// // The cats are multiplying!
-
-// // Write a function combineCats that has two parameters: mama, and papa. The function will take two arguments -- each a cat object.
-// // Pass cat1 and cat2 as arguments to the combineCats function. The function should console.log them.
-// // Example:
-
-// // combineCats(cat1, cat2)
-// // { name: "Joe", age: 19, breed: "Mog" } { name: "Jam", age: 45, breed: "Siamese" }
-
-// // This is to demonstrate that functions can take objects as arguments
-
-// // You could also invoke the combineCats function by writing the objects straight into the parentheses:
-
-// // combineCats({ name: "Craig", age: 20, breed: "unknown" }, { name: "Linda", age: 20, breed: "undefined" });
-// // Make it so the combineCats function will return a combination of the two incoming cats. The result should be an object wherein the:
-
-// // name is a concatenation of the parents' names.
-// // age is 1.
-// // breed is each of the parents' breeds with a hyphen in between.
-// // Example:
-
-// // console.log(combineCats(cat1, cat2));
-// // { name: 'JoeJam', age: 1, breed: 'Mog-Siamese' }
-
-// // This is to demonstrate that a function can return an object
-
-// // K. Cat Brain-Bender
-// // If combineCats returns an object, and if combineCats takes objects as arguments, then it stands to reason that:
-
-// // combineCats can use itself as its own argument.
-
-// // Take a second to stew on that.
-
-// // What is the result of the following?
-
-// // console.log(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)));
-// // The above console.log is two levels deep of combineCats.
-
-// // Write a console.log that is three levels deep of combineCats. combineCats should have two arguments, each which are combineCats, each which have two arguments, each which are combineCats.
-// // Your output should look something like:
-
-// // { name: 'JoeJamJoeJamJoeJamJoeJam`, age: 1, breed: 'Mog-Siamese-Mog-Siamese-Mog-Siamese-Mog-Siamese' }
-// // */
+// { name: 'JoeJamJoeJamJoeJamJoeJam`, age: 1, breed: 'Mog-Siamese-Mog-Siamese-Mog-Siamese-Mog-Siamese' }
+// */
